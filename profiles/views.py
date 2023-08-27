@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from .models import Profile
 
-def profiles_index(request):
+def index(request):
     profiles_list = Profile.objects.all()
     context = {'profiles_list': profiles_list}
-    return render(request, 'profiles_index.html', context)
+    return render(request, 'profiles/profiles_index.html', context)
 
 # Aliquam sed metus eget nisi tincidunt ornare accumsan eget lac
 # laoreet neque quis, pellentesque dui. Nullam facilisis pharetra vulputate. Sed tincidunt, dolor id facilisis fringilla, eros leo tristique lacus,
@@ -13,4 +13,4 @@ def profile(request, username):
     profile = Profile.objects.get(user__username=username)
     print(profile)
     context = {'profile': profile}
-    return render(request, 'profile.html', context)
+    return render(request, 'profiles/profile.html', context)

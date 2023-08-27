@@ -1,7 +1,7 @@
 import os
-
 from pathlib import Path
-
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -19,6 +19,9 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+
+ERROR_404 = '404.html'
+ERROR_500 = '500.html'
 
 INSTALLED_APPS = [
     'oc_lettings_site.apps.OCLettingsSiteConfig',
@@ -115,3 +118,35 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static",]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'sentry': {
+            'level': 'ERROR',
+            'class': 'sentry_sdk.integrations.logging.EventHandler',
+        },
+    },
+    'root': {
+        'handlers': ['sentry'],
+        'level': 'INFO',
+    },
+    'lettings': {
+        'handlers': ['sentry'],
+        'level': 'ERROR',
+    },
+    'profiles': {
+        'handlers': ['sentry'],
+        'level': 'ERROR',
+    },
+    # ...
+}
+
+sentry_sdk.init(
+dsn="https://389132793ca9706d738dead1f34338c7@o4505777668816896.ingest.sentry.io/4505777670782976",
+integrations=[DjangoIntegration()],
+send_default_pii=True,
+traces_sample_rate=1.0,
+profiles_sample_rate=1.0,
+)

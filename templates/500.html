@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Page Not Found{% endblock title %}
+
+{% block content %}
+<link href="{% static 'css/error500.css' %}" rel="stylesheet">
+
+<div class="error-container">
+    <p class="page-header-ui-title mb-3 display-6">There's an internal server error, please try again later.</p>
+    <a href="/" class="btn fw-500 ms-lg-4 btn-primary px-10">Go back to the homepage</a>
+</div>
+{% endblock content %}

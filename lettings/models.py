@@ -2,6 +2,9 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinLengthValidator
 
 class Address(models.Model):
+    """
+    Model to represent an address.
+    """
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
     street = models.CharField(max_length=64)
     city = models.CharField(max_length=64)
@@ -10,12 +13,21 @@ class Address(models.Model):
     country_iso_code = models.CharField(max_length=3, validators=[MinLengthValidator(3)])
 
     def __str__(self):
+        """
+        Returns a string representation of the address.
+        """
         return f'{self.number} {self.street}'
 
 
 class Letting(models.Model):
+    """
+    Model to represent a letting property.
+    """
     title = models.CharField(max_length=256)
     address = models.OneToOneField(Address, on_delete=models.CASCADE)
 
     def __str__(self):
+        """
+        Returns a string representation of the letting property.
+        """
         return self.title

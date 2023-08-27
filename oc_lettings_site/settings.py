@@ -127,21 +127,36 @@ LOGGING = {
             'level': 'ERROR',
             'class': 'sentry_sdk.integrations.logging.EventHandler',
         },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
     },
-    'root': {
-        'handlers': ['sentry'],
-        'level': 'INFO',
+    'loggers': {
+        'django': {
+            'handlers': ['sentry'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        'lettings': {
+            'handlers': ['sentry', 'console'],
+            'level': 'ERROR',
+        },
+        'profiles': {
+            'handlers': ['sentry', 'console'],
+            'level': 'ERROR',
+        },
+        'models': {
+            'handlers': ['sentry', 'console'],
+            'level': 'INFO',
+        },
+        'services': {
+            'handlers': ['sentry', 'console'],
+            'level': 'DEBUG',
+        },
     },
-    'lettings': {
-        'handlers': ['sentry'],
-        'level': 'ERROR',
-    },
-    'profiles': {
-        'handlers': ['sentry'],
-        'level': 'ERROR',
-    },
-    # ...
 }
+
 
 sentry_sdk.init(
 dsn="https://389132793ca9706d738dead1f34338c7@o4505777668816896.ingest.sentry.io/4505777670782976",

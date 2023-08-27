@@ -6,6 +6,7 @@ lettings_logger = logging.getLogger('lettings')
 profiles_logger = logging.getLogger('profiles')
 
 def index(request):
+    lettings_logger.error('Mega erreur')
     return render(request, 'index.html')
 
 def custom_404(request, exception=None):

@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+import logging
+
+profiles_logger = logging.getLogger('profiles')
 
 class Profile(models.Model):
     """
@@ -13,3 +16,10 @@ class Profile(models.Model):
         Returns a string representation of the profile.
         """
         return self.user.username
+
+    def save(self, *args, **kwargs):
+        """
+        Override the save method to add a log when a profile is saved.
+        """
+        profiles_logger.info(f'Profile saved for user: {self.user.username}')
+        super().save(*args, **kwargs)

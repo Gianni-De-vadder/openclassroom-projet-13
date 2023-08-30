@@ -17,3 +17,5 @@ admin.site.register(Address, AddressAdmin)
 
 # Register the Letting model without any custom admin options
 admin.site.register(Letting)
+
+#TEST

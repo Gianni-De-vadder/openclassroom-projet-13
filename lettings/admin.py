@@ -9,13 +9,8 @@ class AddressAdmin(admin.ModelAdmin):
     search_fields = ['number', 'street', 'city', 'state', 'zip_code', 'country_iso_code']
     list_filter = ['country_iso_code']
 
-# Change the plural name for Address model in admin interface
 Address._meta.verbose_name_plural = "Addresses"
 
-# Register the Address model with the custom admin options
 admin.site.register(Address, AddressAdmin)
 
-# Register the Letting model without any custom admin options
 admin.site.register(Letting)
-
-#TEST

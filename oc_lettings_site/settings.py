@@ -10,13 +10,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s'
+SECRET_KEY_VALUE = os.environ.get('SECRET_KEY_VALUE')
+print(SECRET_KEY_VALUE)
+SECRET_KEY = str(SECRET_KEY_VALUE)
+
+DEBUG_VALUE = os.environ.get('DEBUG')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+DEBUG = DEBUG_VALUE
+print(DEBUG)
+ALLOWED_HOSTS = ['.herokuapp.com', '0.0.0.0', '127.0.0.1']
 
 # Application definition
 
@@ -44,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'oc_lettings_site.urls'
@@ -157,9 +161,11 @@ LOGGING = {
     },
 }
 
+SENTRY_DSN = os.environ.get("SENTRY_DSN")
+print(SENTRY_DSN)
 
 sentry_sdk.init(
-dsn="https://389132793ca9706d738dead1f34338c7@o4505777668816896.ingest.sentry.io/4505777670782976",
+dsn=SENTRY_DSN,
 integrations=[DjangoIntegration()],
 send_default_pii=True,
 traces_sample_rate=1.0,

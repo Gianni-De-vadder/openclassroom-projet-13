@@ -1,5 +1,5 @@
 # Utilisez une image Python officielle comme base
-FROM python:alpine3.18
+FROM python:alpine
 
 # Définir le répertoire de travail à l'intérieur du conteneur
 WORKDIR /app
@@ -13,8 +13,14 @@ RUN pip install -r requirements.txt
 # Copier le contenu du projet dans le conteneur
 COPY . .
 
+
+RUN python manage.py collectstatic --noinput
+
+ENV PORT=8000
+
 # Exposer le port utilisé par votre application (par exemple, 8000)
 EXPOSE 8000
 
 # Exécutez votre application Django lorsque le conteneur démarre
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]pars
+CMD gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:$PORT
+

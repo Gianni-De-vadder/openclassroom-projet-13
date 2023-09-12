@@ -1,8 +1,8 @@
 ==============================
-Documentation du projet oc_lettings_site
+Documentation du projet lettings
 ==============================
 
-Bienvenue dans la documentation du projet oc_lettings_site. Ce document contient des informations essentielles sur l'installation, l'exécution et la gestion de ce projet Django.
+Bienvenue dans la documentation du projet lettings. Ce document contient des informations essentielles sur l'installation, l'exécution et la gestion de ce projet Django.
 
 .. toctree::
    :maxdepth: 2
@@ -21,14 +21,12 @@ Bienvenue dans la documentation du projet oc_lettings_site. Ce document contient
    documentation
    documentation/generation
    documentation/acces
-   contribution
    support-et-contact
-   licence
 
 1. Introduction
 ===============
 
-Le projet "oc_lettings_site" est une application Django conçue pour gérer les annonces immobilières. Cette documentation vise à vous guider à travers les étapes d'installation, de configuration et de déploiement du projet.
+Le projet "lettings" est une application Django conçue pour gérer les annonces immobilières. Cette documentation vise à vous guider à travers les étapes d'installation, de configuration et de déploiement du projet.
 
 2. Installation
 ==============
@@ -57,8 +55,8 @@ Clonez le référentiel du projet à l'aide de Git et créez un environnement vi
 
 .. code-block:: bash
 
-   git clone https://github.com/votreutilisateur/oc_lettings_site.git
-   cd oc_lettings_site
+   git clone https://gitlab.com/giannidevadder/lettings.git
+   cd lettings
    python3 -m venv venv
    source venv/bin/activate
 
@@ -99,7 +97,7 @@ Pour exécuter le projet en mode de développement, utilisez la commande suivant
 
    python manage.py runserver
 
-Le site web sera disponible à l'adresse http://localhost:8000/.
+Le site web sera disponible à l'adresse http://127.0.0.1:8000/.
 
 Exécution en mode de production
 -------------------------------
@@ -122,8 +120,8 @@ Déploiement sur Heroku
 Vous pouvez déployer ce projet sur la plateforme Heroku en suivant les étapes suivantes :
 
 1. Créez une application Heroku.
-2. Configurez les variables d'environnement nécessaires, y compris SECRET_KEY, DEBUG, et d'autres variables spécifiques à votre projet.
-3. Utilisez Heroku Container Registry et Heroku CLI pour déployer l'application. Créez un fichier heroku.yml pour spécifier la commande de démarrage du projet (par exemple, CMD gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:$PORT).
+2. Configurez les variables d'environnement nécessaires, y compris SECRET_KEY, DEBUG, SENTRY_DSN et d'autres variables spécifiques à votre projet.
+3. Utilisez Heroku Container Registry et Heroku CLI pour déployer l'application. Créez un fichier heroku.yml pour spécifier la commande de démarrage du projet (par exemple, CMD gunicorn lettings.wsgi:application --bind 0.0.0.0:$PORT).
 4. Utilisez les outils de gestion des bases de données d'Heroku pour configurer votre base de données.
 
 Personnalisation de l'environnement Heroku
@@ -150,20 +148,10 @@ Accès à la documentation
 -------------------------
 
 La documentation est disponible à l'adresse URL de votre documentation.
+lien : https://openclassroom-projet-13.readthedocs.io/fr/latest/
 
-6. Contribuer au projet
-=======================
-
-Si vous souhaitez contribuer à ce projet, veuillez consulter le fichier CONTRIBUTING.md pour obtenir des informations sur la manière de contribuer.
-
-7. Support et contact
+6. Support et contact
 ======================
 
-Si vous avez des questions ou besoin d'assistance, vous pouvez nous contacter à adresse e-mail de support.
-
-8. Licence
-==========
-
-Ce projet est sous licence Nom de la licence. Consultez le fichier LICENSE.txt pour plus d'informations sur les conditions de la licence.
-
-Ceci est un exemple de documentation qui peut être personnalisé en fonction de votre projet spécifique. N'hésitez pas à ajouter des sections supplémentaires, des captures d'écran, des exemples de code, etc., pour rendre votre documentation complète et informative.
+Si vous avez des questions ou besoin d'assistance, vous pouvez nous contacter à adresse e-mail de support :
+giannidevadder0@gmail.com

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Profile
 
+
 class ProfileAdmin(admin.ModelAdmin):
     """
     Admin class for Profile model.
@@ -18,5 +19,6 @@ class ProfileAdmin(admin.ModelAdmin):
     user_username.short_description = 'Username'  # Column header
 
     # You can add more customizations and methods as needed.
+
 
 admin.site.register(Profile, ProfileAdmin)

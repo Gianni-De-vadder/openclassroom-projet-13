@@ -121,7 +121,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "static",]
+STATICFILES_DIRS = [BASE_DIR / "static", ]
 
 LOGGING = {
     'version': 1,
@@ -165,9 +165,9 @@ SENTRY_DSN = os.environ.get("SENTRY_DSN")
 print(SENTRY_DSN)
 
 sentry_sdk.init(
-dsn=SENTRY_DSN,
-integrations=[DjangoIntegration()],
-send_default_pii=True,
-traces_sample_rate=1.0,
-profiles_sample_rate=1.0,
+    dsn=SENTRY_DSN,
+    integrations=[DjangoIntegration()],
+    send_default_pii=True,
+    traces_sample_rate=1.0,
+    profiles_sample_rate=1.0,
 )

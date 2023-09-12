@@ -1,0 +1,31 @@
+# readthedocs.yml
+version: 3
+
+# Configuration générale du projet
+python:
+  version: 3.10
+  setup_py_install: true
+
+# Configuration de la génération de la documentation
+sphinx:
+  configuration: source/conf.py  # Le chemin vers votre fichier de configuration Sphinx
+  build:
+    image: latest  # L'image Docker utilisée pour générer la documentation
+    environment:
+      - SPHINXOPTS=-W  # Options Sphinx (ici, -W signifie afficher les avertissements en tant qu'erreurs)
+
+# Spécification des dépendances (facultatif, si vous avez des dépendances Python spécifiques)
+dependencies:
+  python:
+    - sphinx
+    - sphinx-rtd-theme
+    - vos-autres-dépendances
+
+# Spécification de la version de la documentation
+version: 1
+
+# Options supplémentaires (facultatif)
+pdf:
+  output:
+    - my_documentation.pdf  # Le nom du fichier PDF de sortie (facultatif)
+

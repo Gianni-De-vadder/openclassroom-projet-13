@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Documentation du projet oc_lettings_site &#8212; lettings 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="documentation-du-projet-oc-lettings-site">
+<h1>Documentation du projet oc_lettings_site<a class="headerlink" href="#documentation-du-projet-oc-lettings-site" title="Link to this heading">¶</a></h1>
+<p>Bienvenue dans la documentation du projet oc_lettings_site. Ce document contient des informations essentielles sur l’installation, l’exécution et la gestion de ce projet Django.</p>
+<div class="toctree-wrapper compound">
+</div>
+<section id="introduction">
+<h2>1. Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
+<p>Le projet “oc_lettings_site” est une application Django conçue pour gérer les annonces immobilières. Cette documentation vise à vous guider à travers les étapes d’installation, de configuration et de déploiement du projet.</p>
+</section>
+<section id="installation">
+<h2>2. Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<section id="prerequis">
+<h3>Prérequis<a class="headerlink" href="#prerequis" title="Link to this heading">¶</a></h3>
+<p>Assurez-vous que votre système dispose des prérequis suivants avant de commencer :</p>
+<ul class="simple">
+<li><p>Python 3.x installé.</p></li>
+<li><p>Git installé pour la gestion du code source.</p></li>
+<li><p>Un environnement virtuel Python pour isoler les dépendances.</p></li>
+</ul>
+</section>
+<section id="configuration-de-l-environnement">
+<h3>Configuration de l’environnement<a class="headerlink" href="#configuration-de-l-environnement" title="Link to this heading">¶</a></h3>
+<p>Clonez le référentiel du projet à l’aide de Git et créez un environnement virtuel pour isoler les dépendances Python :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/votreutilisateur/oc_lettings_site.git
+<span class="nb">cd</span><span class="w"> </span>oc_lettings_site
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</pre></div>
+</div>
+</section>
+<section id="installation-des-dependances">
+<h3>Installation des dépendances<a class="headerlink" href="#installation-des-dependances" title="Link to this heading">¶</a></h3>
+<p>Installez les dépendances Python à partir du fichier requirements.txt :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="configuration-de-la-base-de-donnees">
+<h3>Configuration de la base de données<a class="headerlink" href="#configuration-de-la-base-de-donnees" title="Link to this heading">¶</a></h3>
+<p>Configurez votre base de données en utilisant les paramètres Django, puis effectuez les migrations :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</pre></div>
+</div>
+</section>
+</section>
+<section id="execution-du-projet">
+<h2>3. Exécution du projet<a class="headerlink" href="#execution-du-projet" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<section id="execution-en-mode-de-developpement">
+<h3>Exécution en mode de développement<a class="headerlink" href="#execution-en-mode-de-developpement" title="Link to this heading">¶</a></h3>
+<p>Pour exécuter le projet en mode de développement, utilisez la commande suivante :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+</div>
+<p>Le site web sera disponible à l’adresse <a class="reference external" href="http://localhost:8000/">http://localhost:8000/</a>.</p>
+</section>
+<section id="execution-en-mode-de-production">
+<h3>Exécution en mode de production<a class="headerlink" href="#execution-en-mode-de-production" title="Link to this heading">¶</a></h3>
+<p>Pour exécuter le projet en mode de production, consultez la section “Déploiement sur Heroku” ci-dessous.</p>
+</section>
+</section>
+<section id="deploiement">
+<h2>4. Déploiement<a class="headerlink" href="#deploiement" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<section id="deploiement-sur-heroku">
+<h3>Déploiement sur Heroku<a class="headerlink" href="#deploiement-sur-heroku" title="Link to this heading">¶</a></h3>
+<p>Vous pouvez déployer ce projet sur la plateforme Heroku en suivant les étapes suivantes :</p>
+<ol class="arabic simple">
+<li><p>Créez une application Heroku.</p></li>
+<li><p>Configurez les variables d’environnement nécessaires, y compris SECRET_KEY, DEBUG, et d’autres variables spécifiques à votre projet.</p></li>
+<li><p>Utilisez Heroku Container Registry et Heroku CLI pour déployer l’application. Créez un fichier heroku.yml pour spécifier la commande de démarrage du projet (par exemple, CMD gunicorn oc_lettings_site.wsgi:application –bind 0.0.0.0:$PORT).</p></li>
+<li><p>Utilisez les outils de gestion des bases de données d’Heroku pour configurer votre base de données.</p></li>
+</ol>
+</section>
+<section id="personnalisation-de-l-environnement-heroku">
+<h3>Personnalisation de l’environnement Heroku<a class="headerlink" href="#personnalisation-de-l-environnement-heroku" title="Link to this heading">¶</a></h3>
+<p>Personnalisez davantage votre environnement Heroku en fonction de vos besoins spécifiques.</p>
+</section>
+</section>
+<section id="documentation">
+<h2>5. Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<section id="generation-de-la-documentation">
+<h3>Génération de la documentation<a class="headerlink" href="#generation-de-la-documentation" title="Link to this heading">¶</a></h3>
+<p>La documentation de ce projet est générée à l’aide de Sphinx. Pour générer la documentation, suivez les instructions dans le fichier doc/README.md.</p>
+</section>
+<section id="acces-a-la-documentation">
+<h3>Accès à la documentation<a class="headerlink" href="#acces-a-la-documentation" title="Link to this heading">¶</a></h3>
+<p>La documentation est disponible à l’adresse URL de votre documentation.</p>
+</section>
+</section>
+<section id="contribuer-au-projet">
+<h2>6. Contribuer au projet<a class="headerlink" href="#contribuer-au-projet" title="Link to this heading">¶</a></h2>
+<p>Si vous souhaitez contribuer à ce projet, veuillez consulter le fichier CONTRIBUTING.md pour obtenir des informations sur la manière de contribuer.</p>
+</section>
+<section id="support-et-contact">
+<h2>7. Support et contact<a class="headerlink" href="#support-et-contact" title="Link to this heading">¶</a></h2>
+<p>Si vous avez des questions ou besoin d’assistance, vous pouvez nous contacter à adresse e-mail de support.</p>
+</section>
+<section id="licence">
+<h2>8. Licence<a class="headerlink" href="#licence" title="Link to this heading">¶</a></h2>
+<p>Ce projet est sous licence Nom de la licence. Consultez le fichier LICENSE.txt pour plus d’informations sur les conditions de la licence.</p>
+<p>Ceci est un exemple de documentation qui peut être personnalisé en fonction de votre projet spécifique. N’hésitez pas à ajouter des sections supplémentaires, des captures d’écran, des exemples de code, etc., pour rendre votre documentation complète et informative.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">lettings</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Gianni De vadder.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

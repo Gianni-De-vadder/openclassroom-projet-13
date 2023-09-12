@@ -3,6 +3,7 @@ from django.core.validators import MaxValueValidator, MinLengthValidator
 import logging
 models_logger = logging.getLogger('models')
 
+
 class Address(models.Model):
     """
     Model to represent an address.
@@ -14,9 +15,12 @@ class Address(models.Model):
     zip_code = models.PositiveIntegerField(validators=[MaxValueValidator(99999)])
     country_iso_code = models.CharField(max_length=3, validators=[MinLengthValidator(3)])
 
+    class Meta:
+        verbose_name_plural = "addresses"
+
     def save(self, *args, **kwargs):
-       models_logger.info('Address saved: %s', self)
-       super().save(*args, **kwargs)
+        models_logger.info('Address saved: %s', self)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         """
@@ -40,4 +44,4 @@ class Letting(models.Model):
         """
         Returns a string representation of the letting property.
         """
-        return self.title
+        return str(self.title)

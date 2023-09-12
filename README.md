@@ -1,5 +1,4 @@
 # lettings
-# d
 
 ## Getting started
 

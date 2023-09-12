@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from .models import Letting
 import logging
 
+
 lettings_logger = logging.getLogger('lettings')
+
 
 def index(request):
     """
@@ -15,6 +17,7 @@ def index(request):
     context = {'lettings_list': lettings_list}
     lettings_logger.info('User accessed the lettings index page')
     return render(request, 'lettings/index.html', context)
+
 
 def letting(request, letting_id):
     """

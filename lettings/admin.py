@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Letting, Address
 
+
 class AddressAdmin(admin.ModelAdmin):
     """
     Custom admin options for the Address model.
@@ -9,8 +10,6 @@ class AddressAdmin(admin.ModelAdmin):
     search_fields = ['number', 'street', 'city', 'state', 'zip_code', 'country_iso_code']
     list_filter = ['country_iso_code']
 
-Address._meta.verbose_name_plural = "Addresses"
 
 admin.site.register(Address, AddressAdmin)
-
 admin.site.register(Letting)

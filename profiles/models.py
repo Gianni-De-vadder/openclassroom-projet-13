@@ -4,6 +4,7 @@ import logging
 
 profiles_logger = logging.getLogger('profiles')
 
+
 class Profile(models.Model):
     """
     Model representing user profiles.

@@ -4,7 +4,6 @@ version: 3
 # Configuration générale du projet
 python:
   version: 3.8
-  setup_py_install: true
 
 # Configuration de la génération de la documentation
 sphinx:
@@ -18,10 +17,7 @@ sphinx:
 dependencies:
   python:
     - sphinx
-    - sphinx-rtd-theme
-    - vos-autres-dépendances
 
-# Spécification de la version de la documentation
 version: 1
 
 # Options supplémentaires (facultatif)

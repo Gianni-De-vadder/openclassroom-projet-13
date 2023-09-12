@@ -3,7 +3,7 @@ version: 3
 
 # Configuration générale du projet
 python:
-  version: 3.10
+  version: 3.8
   setup_py_install: true
 
 # Configuration de la génération de la documentation
